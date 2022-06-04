@@ -55,7 +55,7 @@ function Dashboard() {
   }, [user, loading]);
 
   useEffect(() => {
-    const getUsers = async () => {
+    const getRideData = async () => {
       const data = await getDocs(usersCollectionRef);
       // console.log(data.docs[1]._document.data.value.mapValue.fields);
       // console.log(
@@ -66,7 +66,7 @@ function Dashboard() {
 
       setList(data.docs);
     };
-    getUsers();
+    getRideData();
   }, []);
 
   const handleSubmit = (e) => {
@@ -204,13 +204,8 @@ function Dashboard() {
               <option>Chennai</option>
               <option>Bangalore</option>
             </select>
-            {/* <input
-              onChange={(e) => setFrom(e.target.value)}
-              value={from}
-            ></input> */}
           </label>
           <label>
-            {/* <input type="text" name="to" /> */}
             <select
               placeholder="From"
               onChange={(event) => {
@@ -235,8 +230,6 @@ function Dashboard() {
               }}
             />
           </label>
-          {/* <input type="submit" value="Submit" /> */}
-          {/* <button type="submit">Click to submit</button> */}
         </form>
       </div>
       <div className="available-rides">
