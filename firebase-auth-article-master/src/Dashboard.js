@@ -350,7 +350,7 @@ function Dashboard() {
         />
         <input
           type="number"
-          placeholder="Mob No.(include 91 before )"
+          placeholder="Mob No(include 91 before )"
           onChange={(event) => {
             setNewMobnum(Number(event.target.value));
           }}

@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
   registerWithEmailAndPassword,
-  signInWithGoogle,
+  // signInWithGoogle,
 } from "./firebase";
 import "./Register.css";
 
@@ -52,12 +52,12 @@ function Register() {
         <button className="register__btn" onClick={register}>
           Register
         </button>
-        <button
+        {/* <button
           className="register__btn register__google"
           onClick={signInWithGoogle}
         >
           Register with Google
-        </button>
+        </button> */}
 
         <div>
           Already have an account? <Link to="/">Login</Link> now.
