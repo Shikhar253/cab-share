@@ -320,7 +320,7 @@ function Dashboard() {
           })}
       </div>
       <div>
-        <h1> create new ride </h1>
+        <h1>Can't find a suitable ride? Create a new ride! </h1>
         <select
           placeholder="To"
           onChange={(event) => {
