@@ -28,6 +28,7 @@ function Register() {
   return (
     <div className="register">
       <div className="register__container">
+        VIT CAB SHARE WEBSITE
         <input
           type="text"
           className="register__textBox"
@@ -58,7 +59,6 @@ function Register() {
         >
           Register with Google
         </button> */}
-
         <div>
           Already have an account? <Link to="/">Login</Link> now.
         </div>
