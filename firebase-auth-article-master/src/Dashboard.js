@@ -177,8 +177,9 @@ function Dashboard() {
     <>
       <div className="dashboard">
         <div className="dashboard__container">
-          Logged in as
-          <div>{name}</div>
+          VIT CAB SHARE WEBSITE - {name}
+          {/* Logged in as
+          <div>{name}</div> */}
           <div>{user?.email}</div>
           <button className="dashboard__btn" onClick={logout}>
             Logout
@@ -349,7 +350,7 @@ function Dashboard() {
         />
         <input
           type="number"
-          placeholder="Mobile number"
+          placeholder="Mob No.(include 91 before )"
           onChange={(event) => {
             setNewMobnum(Number(event.target.value));
           }}
