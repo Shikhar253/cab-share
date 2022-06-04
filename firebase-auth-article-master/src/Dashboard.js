@@ -236,7 +236,7 @@ function Dashboard() {
             />
           </label>
           {/* <input type="submit" value="Submit" /> */}
-          <button type="submit">Click to submit</button>
+          {/* <button type="submit">Click to submit</button> */}
         </form>
       </div>
       <div className="available-rides">
