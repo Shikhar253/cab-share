@@ -95,7 +95,7 @@ const logout = () => {
 export {
   auth,
   db,
-  signInWithGoogle,
+  // signInWithGoogle,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordReset,
