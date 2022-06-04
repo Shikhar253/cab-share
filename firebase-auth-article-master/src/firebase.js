@@ -18,13 +18,13 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: JSON.stringify(process.env.FIREBASE_API_KEY),
-  authDomain: JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
-  projectId: JSON.stringify(process.env.FIREBASE_PROJECT_ID),
-  storageBucket: JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
-  messagingSenderId: JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID),
-  appId: JSON.stringify(process.env.FIREBASE_APP_ID),
-  measurementId: JSON.stringify(process.env.FIREBASE_MEASUREMENT_ID),
+  apiKey: "AIzaSyBnyfHBCDtH-mgAn6FUYlRcyQB1F1qPba0",
+  authDomain: "fir-auth-article-82651.firebaseapp.com",
+  projectId: "fir-auth-article-82651",
+  storageBucket: "fir-auth-article-82651.appspot.com",
+  messagingSenderId: "727849895556",
+  appId: "1:727849895556:web:f4b0960734ec7e75a824d1",
+  measurementId: "G-KNGZ5J7TZY",
 };
 
 const app = initializeApp(firebaseConfig);
