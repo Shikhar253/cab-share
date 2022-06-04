@@ -77,12 +77,7 @@ function Dashboard() {
     console.log(`date, ${date}`);
   };
   function func(seconds) {
-    // Save the time in Human
-    // readable format
     let ans = "";
-
-    // Number of days in month
-    // in normal year
     let daysOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
     let currYear,
@@ -92,9 +87,6 @@ function Dashboard() {
       index,
       date,
       month,
-      hours,
-      minutes,
-      secondss,
       flag = 0;
 
     // Calculate total days unix time T
@@ -162,9 +154,9 @@ function Dashboard() {
     }
 
     // Calculating HH:MM:YYYY
-    hours = parseInt(extraTime / 3600, 10);
-    minutes = parseInt((extraTime % 3600) / 60, 10);
-    secondss = parseInt((extraTime % 3600) % 60, 10);
+    // hours = parseInt(extraTime / 3600, 10);
+    // minutes = parseInt((extraTime % 3600) / 60, 10);
+    // secondss = parseInt((extraTime % 3600) % 60, 10);
 
     ans += date.toString();
     ans += "-";
@@ -246,8 +238,8 @@ function Dashboard() {
           <button type="submit">Click to submit</button>
         </form>
       </div>
-      <div>
-        <h1> all available rides:</h1>
+      <div className="available-rides">
+        <h1> Available rides:</h1>
         {list.length > 0 &&
           list.map((listitem) => {
             // console.log(listitem); // object hai
@@ -319,7 +311,7 @@ function Dashboard() {
             );
           })}
       </div>
-      <div>
+      <div className="newride">
         <h1>Can't find a suitable ride? Create a new ride! </h1>
         <select
           placeholder="To"
