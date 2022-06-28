@@ -76,6 +76,7 @@ function Dashboard() {
     console.log(`to, ${to}`);
     console.log(`date, ${date}`);
   };
+
   function func(seconds) {
     let ans = "";
     let daysOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -234,76 +235,144 @@ function Dashboard() {
       </div>
       <div className="available-rides">
         <h1> Available rides:</h1>
-        {list.length > 0 &&
-          list.map((listitem) => {
-            // console.log(listitem); // object hai
-
-            // console.log(to);
-            return (from == "" && to == "") ||
-              (listitem._document.data.value.mapValue.fields.from
-                .stringValue === from &&
-                listitem._document.data.value.mapValue.fields.datetime
-                  .integerValue == Math.floor(Date.parse(date) / 1000) &&
-                listitem._document.data.value.mapValue.fields.to.stringValue ===
-                  to) ? (
-              <div>
-                <p>
-                  desc:{" "}
-                  {
-                    listitem._document.data.value.mapValue.fields.desc
-                      .stringValue
-                  }
-                </p>
-                <p>
-                  from:{" "}
-                  {
-                    listitem._document.data.value.mapValue.fields.from
-                      .stringValue
-                  }
-                </p>
-                <p>
-                  to:{" "}
-                  {listitem._document.data.value.mapValue.fields.to.stringValue}
-                </p>
-                <p>
-                  date time:{" "}
-                  {func(
+        <table>
+          <tbody>
+            <tr>
+              <th>from</th>
+              <th>to</th>
+              <th>date</th>
+              <th>time (24 hour format)</th>
+              <th>desc</th>
+              <th>chat on whatsapp</th>
+            </tr>
+            {list.length > 0 &&
+              list.map((listitem) => {
+                return (from == "" && to == "") ||
+                  (listitem._document.data.value.mapValue.fields.from
+                    .stringValue === from &&
                     listitem._document.data.value.mapValue.fields.datetime
-                      .integerValue
-                  )}
-                </p>
-                <p>
-                  time (24 hr format):{" "}
-                  {
-                    listitem._document.data.value.mapValue.fields.time
-                      .stringValue
-                  }
-                </p>
-                <p>
-                  <ReactWhatsapp
-                    number={
-                      listitem._document.data.value.mapValue.fields.mobnum
-                        .integerValue
-                    }
-                    message={`hey, i saw your entry on cab share site from ${
-                      listitem._document.data.value.mapValue.fields.from
-                        .stringValue
-                    } to ${
-                      listitem._document.data.value.mapValue.fields.to
-                        .stringValue
-                    } on ${func(
-                      listitem._document.data.value.mapValue.fields.datetime
-                        .integerValue
-                    )} and would like to join you`}
-                  >
-                    Chat on Whatsapp
-                  </ReactWhatsapp>
-                </p>
-              </div>
-            ) : (
-              <p> </p>
-            );
-          })}
+                      .integerValue == Math.floor(Date.parse(date) / 1000) &&
+                    listitem._document.data.value.mapValue.fields.to
+                      .stringValue === to) ? (
+                  <>
+                    <tr>
+                      <td>
+                        {" "}
+                        {
+                          listitem._document.data.value.mapValue.fields.from
+                            .stringValue
+                        }
+                      </td>
+                      <td>
+                        {" "}
+                        {
+                          listitem._document.data.value.mapValue.fields.to
+                            .stringValue
+                        }
+                      </td>
+                      <td>
+                        {" "}
+                        {func(
+                          listitem._document.data.value.mapValue.fields.datetime
+                            .integerValue
+                        )}
+                      </td>
+                      <td>
+                        {" "}
+                        {
+                          listitem._document.data.value.mapValue.fields.time
+                            .stringValue
+                        }
+                      </td>
+                      <td>
+                        {
+                          listitem._document.data.value.mapValue.fields.desc
+                            .stringValue
+                        }
+                      </td>
+                      <td>
+                        <ReactWhatsapp
+                          number={
+                            listitem._document.data.value.mapValue.fields.mobnum
+                              .integerValue
+                          }
+                          message={`hey, i saw your entry on cab share site from ${
+                            listitem._document.data.value.mapValue.fields.from
+                              .stringValue
+                          } to ${
+                            listitem._document.data.value.mapValue.fields.to
+                              .stringValue
+                          } on ${func(
+                            listitem._document.data.value.mapValue.fields
+                              .datetime.integerValue
+                          )} and would like to join you`}
+                        >
+                          Chat on Whatsapp
+                        </ReactWhatsapp>
+                      </td>
+                    </tr>
+                    {/* <p>
+                      desc:{" "}
+                      {
+                        listitem._document.data.value.mapValue.fields.desc
+                          .stringValue
+                      }
+                    </p>
+                    <p>
+                      from:{" "}
+                      {
+                        listitem._document.data.value.mapValue.fields.from
+                          .stringValue
+                      }
+                    </p>
+                    <p>
+                      to:{" "}
+                      {
+                        listitem._document.data.value.mapValue.fields.to
+                          .stringValue
+                      }
+                    </p>
+                    <p>
+                      date time:{" "}
+                      {func(
+                        listitem._document.data.value.mapValue.fields.datetime
+                          .integerValue
+                      )}
+                    </p>
+                    <p>
+                      time (24 hr format):{" "}
+                      {
+                        listitem._document.data.value.mapValue.fields.time
+                          .stringValue
+                      }
+                    </p> */}
+                    {/* <p>
+                      <ReactWhatsapp
+                        number={
+                          listitem._document.data.value.mapValue.fields.mobnum
+                            .integerValue
+                        }
+                        message={`hey, i saw your entry on cab share site from ${
+                          listitem._document.data.value.mapValue.fields.from
+                            .stringValue
+                        } to ${
+                          listitem._document.data.value.mapValue.fields.to
+                            .stringValue
+                        } on ${func(
+                          listitem._document.data.value.mapValue.fields.datetime
+                            .integerValue
+                        )} and would like to join you`}
+                      >
+                        Chat on Whatsapp
+                      </ReactWhatsapp>
+                    </p> */}
+                  </>
+                ) : (
+                  <p></p>
+                );
+              })}
+          </tbody>
+        </table>
       </div>
       <div className="newride">
         <h1>Can't find a suitable ride? Create a new ride! </h1>
